@@ -1,0 +1,18 @@
+{
+    "Sayhan": {
+        "tech_id": 17084562,
+        "key_access": false
+    },
+    "Marco": {
+        "tech_id": 127319247,
+        "key_access": true
+    },
+    "Kento": {
+        "tech_id": 1812947,
+        "key_access": true
+    },
+    "Matt": {
+        "tech_id": 123456789,
+        "key_access": false
+    }
+}

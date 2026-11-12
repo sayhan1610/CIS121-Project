@@ -1,12 +1,12 @@
-# All the people known in a list.
-people1 = ["Sayhan", "Marco", "Kento", "Matt"]
+from add_dictionary import find_person
 
-def check_people(people):
-    if people in people1:
+
+def check_people(name):
+    if find_person(name) is not None:
         return "known person"
     return "unknown person"
 
 
 if __name__ == "__main__":
-    user_data = input("Enter the first name of the resident: ")
-    print(check_people(user_data))
+    resident_name = input("Enter the first name of the resident: ").strip()
+    print(check_people(resident_name))
