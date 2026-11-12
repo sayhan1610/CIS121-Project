@@ -13,9 +13,17 @@ A simple Python project to help Resident Assistants (RAs).
 
 ## Run
 
+Start the full support system from the project folder:
+
+```bash
+python main.py
+```
+
+The menu provides noise detection, resident lookup, and key-access checks. The
+individual scripts can also still be run separately:
+
 ```bash
 python loop.py
 python person_list.py
 python check_key_access.py
-
 ```
