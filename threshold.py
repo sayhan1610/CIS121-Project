@@ -1,23 +1,40 @@
-# Noise Detector - Threshold Settings
-
-# Store noise thresholds for different locations
-thresholds = {
-    "library": 40,
-    "classroom": 60,
-    "cafeteria": 75
+# Noise detection settings
+settings = {
+    "threshold": 65,
+    "duration": 3
 }
 
-# Select the location
-location = "classroom"
+# Noise levels measured every second
+noise_levels = [45, 100, 45, 65, 68, 70, 50]
 
-# Current noise level in dB
-current_noise = 65
 
-# Get the threshold from the dictionary
-threshold = thresholds[location]
+# Function to detect continuous noise
+def detect_noise(noise_levels, settings):
 
-# Check if the noise exceeds the threshold
-if current_noise > threshold:
-    print("Too Loud!")
+    threshold = settings["threshold"]
+    duration = settings["duration"]
+
+    # Count consecutive loud seconds
+    loud_seconds = 0
+
+    for noise in noise_levels:
+
+        if noise > threshold:
+            loud_seconds += 1
+        else:
+            loud_seconds = 0
+
+        # Check if noise lasts long enough
+        if loud_seconds >= duration:
+            return True
+
+    return False
+
+
+# Call the function
+result = detect_noise(noise_levels, settings)
+
+if result:
+    print("Noise Detected!")
 else:
     print("Normal")
